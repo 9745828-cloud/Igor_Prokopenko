@@ -19,7 +19,31 @@ assets/js/
   vendor/three/                 — self-hosted Three.js + OrbitControls (без внешнего CDN)
 tailwind.config.js              — палитра и шрифты Tailwind
 package.json                    — скрипты сборки CSS
+vercel.json / .vercelignore     — конфигурация деплоя на Vercel
 ```
+
+## Деплой на Vercel
+
+Сайт полностью статический и уже готов к деплою — CSS собран и закоммичен,
+Three.js self-hosted, внешних build-шагов не требуется.
+
+**Через дашборд Vercel:**
+1. [vercel.com/new](https://vercel.com/new) → Import Git Repository → выбрать этот репозиторий.
+2. Framework Preset — оставить **Other**.
+3. Остальное подхватится из `vercel.json` автоматически (Install/Build команды — no-op,
+   Output Directory — корень репозитория).
+4. Deploy.
+
+**Через Vercel CLI:**
+```bash
+npm i -g vercel
+vercel        # preview-деплой
+vercel --prod # деплой в продакшн
+```
+
+После подключения кастомного домена обновите в `index.html`:
+- `<link rel="canonical" href="...">`
+- `og:url`, `og:image`, `twitter:image` — на реальный домен и обложку.
 
 ## Запуск локально
 
