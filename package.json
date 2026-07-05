@@ -1,0 +1,14 @@
+{
+  "name": "prokopenko-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Официальный сайт Игоря Прокопенко — статичная одностраничная сборка (Tailwind CSS + vanilla JS + Three.js).",
+  "scripts": {
+    "build:css": "tailwindcss -c ./tailwind.config.js -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind.css --minify",
+    "watch:css": "tailwindcss -c ./tailwind.config.js -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind.css --watch",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
